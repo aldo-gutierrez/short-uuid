@@ -41,6 +41,8 @@ public class GEOIDTest {
 
         int res = geoid.getGeoID(-12.046374, -77.042793);
         Assertions.assertEquals(0b11_001001_10001110_10111110_01110100, res);
+        Assertions.assertEquals(0b11_001001_10001110_10111110_01110100, geoid.getGeoID(-12.046, -77.043));
+        Assertions.assertEquals(0b11_001001_10001110_10111110_01110110, geoid.getGeoID(-12.042, -77.043));
     }
 
 }
