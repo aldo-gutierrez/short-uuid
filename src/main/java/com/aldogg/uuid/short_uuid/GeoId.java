@@ -6,7 +6,7 @@ package com.aldogg.uuid.short_uuid;
  * 15 bit latitude
  * 17 bit longitude
  */
-public class GEOID {
+public class GeoId {
 
     private static int MIN_LATITUDE_INCLUSIVE =-56;
     private static int MAX_LATITUDE_EXCLUSIVE =+72;
@@ -46,7 +46,7 @@ public class GEOID {
     }
 
     protected int getLon17Bits(double lon) {
-        //15 bits for latitude
+        //17 bits for longitude
         if (lon < MIN_LONGITUDE) {
             lon = MIN_LONGITUDE;
         } else if (lon > MAX_LONGITUDE) {
@@ -54,4 +54,23 @@ public class GEOID {
         }
         return ((int) (lon * 364.088889)) & ((1 << 17) - 1);
     }
+
+    protected double getLat(int geoId) {
+        int[] res = deInterleave(geoId);
+        int lon17 = res[0];
+        int lat15 = res[1];
+        return (lat15 / 256.0) + MIN_LATITUDE_INCLUSIVE;
+    }
+
+    protected double getLong(int geoId) {
+        int[] res = deInterleave(geoId);
+        int lon17 = res[0];
+        int lat15 = res[1];
+        return (lon17 / 364.088889);
+    }
+
+    private int[] deInterleave(int geoId) {
+        return new int[] {0, 0};
+    }
+
 }

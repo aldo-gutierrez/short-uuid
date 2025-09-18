@@ -12,12 +12,12 @@ In this project some ideas for generating 64 bits uuids are been tested.
    7-bit random number
 ```
 
-For creating the timestamp part we use the 64 bits of System.currentTimeMillis() and then 
-we shift it bits to the right and mask it with 30 bits, so we have 27 bits for the number of seconds and 3 bits for storing milliseconds
+For the timestamp part we use the 64 bits of System.currentTimeMillis() and then
+we use 27 bits for the seconds and 3 bits for storing milliseconds
 
-With three bits for ms we can store eight values:  0/8s 1/8s ... 7/8s
+With three bits for millisecond we can store eight values:  0/8s, 1/8s, 2/8, 3/8, 4/8, 5/8, 6/8, 7/8
 
-This 33 bit of timestamp will repeat in four 4 years three months
+with 27 bit for the seconds we can store 4.2560 years
 
 Usage:
 
@@ -34,12 +34,12 @@ Usage:
   23-bit counter, starting with a random value
 ```
 
-For creating the timestamp part we use the 64 bits of System.currentTimeMillis() and then
-we shift it bits to the right and mask it with 33 bits, so we have 30 bits for the number of seconds and 3 bits for storing milliseconds
+For the timestamp part we use the 64 bits of System.currentTimeMillis() and then
+we use 30 bits for the seconds and 3 bits for storing milliseconds
 
-With three bits for ms we can store eight values:  0/8s 1/8s ... 7/8s
+With three bits for millisecond we can store eight values:  0/8s, 1/8s, 2/8, 3/8, 4/8, 5/8, 6/8, 7/8
 
-This 33 bit of timestamp will repeat in 34 years
+with 30 bit for the seconds we can store 34.04 years
 
 Usage:
 
@@ -56,12 +56,12 @@ Usage:
   22-bit counter, starting with a random value
 ```
 
-For creating the timestamp part we use the 64 bits of System.currentTimeMillis() and then
-we shift it bits to the right and mask it with 34 bits, so we have 31 bits for the number of seconds and 3 bits for storing milliseconds
+For the timestamp part we use the 64 bits of System.currentTimeMillis() and then
+we use 31 bits for the seconds and 3 bits for storing milliseconds
 
-With three bits for ms we can store eight values:  0/8s 1/8s ... 7/8s
+With three bits for millisecond we can store eight values:  0/8s, 1/8s, 2/8, 3/8, 4/8, 5/8, 6/8, 7/8
 
-This 34 bit of timestamp will repeat in 34 years
+with 31 bit for the seconds we can store 68.096 years
 
 Usage:
 
@@ -80,7 +80,7 @@ Usage:
 
 Timestamp number of seconds since 1 Jam 1970
 
-This 33 bit of timestamp will repeat in 272 years
+This 33 bit of timestamp will repeat in 272.38 years
 
 Usage:
 
