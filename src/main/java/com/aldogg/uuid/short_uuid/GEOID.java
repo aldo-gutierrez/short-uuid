@@ -54,4 +54,8 @@ public class GEOID {
         }
         return ((int) (lon * 364.088889)) & ((1 << 17) - 1);
     }
+
+
+
+
 }
