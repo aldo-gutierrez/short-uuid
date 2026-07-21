@@ -1,15 +1,16 @@
 package com.aldogg.uuid.short_uuid;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
-public class GeoCode32Test {
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-    private static final double DELTA = 0.02; // Acceptable precision for latitude/longitude
+public class GeoCode32BTest {
+
+    private static final double DELTA = 0.005; // Acceptable precision for latitude/longitude
 
     @Test
     void testEncodeDecodeWithCities() {
-        GeoCode32 geoCode32 = new GeoCode32();
+        GeoCode32B geoCode32 = new GeoCode32B();
 
         // Ten important but distant cities
         Object[][] cities = {
