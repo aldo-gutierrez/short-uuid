@@ -10,7 +10,7 @@ public class GeoCode32BTest {
 
     @Test
     void testEncodeDecodeWithCities() {
-        GeoCode32B geoCode32 = new GeoCode32B();
+        GeoCode32 geoCode32 = new GeoCode32();
 
         // Ten important but distant cities
         Object[][] cities = {

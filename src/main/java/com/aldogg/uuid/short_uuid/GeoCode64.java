@@ -1,8 +1,9 @@
 package com.aldogg.uuid.short_uuid;
 
+import static com.aldogg.uuid.short_uuid.GeoCode32.E7FACTOR_D;
+import static com.aldogg.uuid.short_uuid.GeoCode32.E7FACTOR_I;
+
 public class GeoCode64 {
-    public static final int E7FACTOR_I = 10000000;
-    public static final double E7FACTOR_D = 10000000.0;
 
     /**
      * @param latitude latitude GPS format
